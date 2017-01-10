@@ -1,6 +1,6 @@
 const config = {
     server: {
-        'host':'admin.ufutx.com'
+        'host':'your.host.com'
     }
 }
 
