@@ -1,0 +1,255 @@
+/*
+  全局
+*/
+
+body{
+  padding-top: 45px;
+  background: #fbf9fe;
+  overflow-x: hidden;
+}
+.hide {
+  display: none;
+}
+.zIndex {
+  z-index: -9;
+}
+/*订单管理切换标签被挡*/
+#listPage {
+  position: fixed;
+  top: 89px;
+  width: 100vw;
+}
+.vux-swiper {
+  background: #fbf9fe;
+}
+/*小图标距离*/
+.fa {
+  color: #2C5988;
+}
+.list-icon {
+  margin-right: 10px;
+}
+/*tab bar 切换按钮标签*/
+.vux-tab {
+  z-index: 999;
+}
+/*cell值过长溢出*/
+.weui_cell_ft {
+  max-width: 50vw;
+  word-break: break-all;
+}
+.vux-label-desc {
+  word-break: break-all;
+}
+/*cell箭头方向改动*/
+.weui_cell_ft.with_arrow:after {
+  top: -4px;
+  transform: rotate(135deg);
+}
+
+/* v-r-transition, default is {forward: 'forward', back: 'back'}*/
+.forward-enter, .forward-leave {
+  transform: translate3d(-100%, 0, 0);
+}
+.back-enter, .back-leave {
+  transform: translate3d(100%, 0, 0);
+}
+/**
+* vue-router transition
+*/
+.vux-pop-out-transition,
+.vux-pop-in-transition {
+  width: 100%;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.vux-pop-out-enter,
+.vux-pop-out-leave,
+.vux-pop-in-enter,
+.vux-pop-in-leave {
+  will-change: transform;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+.vux-pop-out-enter {
+  animation-name: popInLeft;
+}
+.vux-pop-out-leave {
+  animation-name: popOutRight;
+}
+.vux-pop-in-enter {
+  perspective: 1000;
+  animation-name: popInRight;
+}
+.vux-pop-in-leave {
+  animation-name: popOutLeft;
+}
+.vux-pop-in-leave .vux-header,
+.vux-pop-in-enter .vux-header {
+  position: fixed;
+  top: -45px;
+}
+@keyframes popInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes popOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+}
+@keyframes popInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes popOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+/*<cell>字体*/
+.weui_cells {
+  font-size: 0.9rem!important;
+}
+/*<x-header>置顶*/
+.vux-header {
+  position:fixed!important;
+  top:0;
+  width:100vw;
+  z-index: 1;
+}
+/*页面顶部<x-header>颜色*/
+.vux-header,
+.vux-header * {
+	background: #2c5988!important;
+	color: #fff!important;
+}
+/*列表数据总数红点*/
+.badgeWrap {
+  position: relative;
+}
+.badgeNum {
+  display: inline-block;
+  background: red;
+  border-radius: 100px;
+  height: 17px;
+  color: #fff;
+  line-height: 17px;
+  padding: 0 5px;
+  margin: 2px;
+  font-size: 0.8em;
+}
+.badgeNum.corner {
+  position: absolute;
+  right: 0;
+}
+/*验证码按钮缩小*/
+.btnCode.weui_btn {
+  font-size: 0.9rem;
+  height: 35px!important;
+  margin: 3px 0;
+  margin-right: 10px;
+}
+/*三个圆点的操作按钮*/
+.more {
+  position: relative;
+  margin-top: 0;
+  left: -30px;
+  border: 0!important;
+  border-radius: 100px!important;
+  background: #d2d2d2!important;
+  font-size: 10px!important;
+}
+
+
+/*
+  单改
+ */
+
+/*拼团成员列表背景修复*/
+.tuan-people .weui_cells {
+  background: #fbf9fe;
+}
+/*join页面图片*/
+.join-img {
+  text-align: center;
+}
+.btn_wrap {
+  padding: 0 1rem;
+  margin-top: 2rem;
+}
+.goods-item {
+  border: 1px solid #ececec;
+  padding: 5px 15px;
+}
+.goods-item-selected {
+  border: 1px solid green;
+}
+.recent {
+  color: rgb(4, 190, 2)
+}
+.discent {
+  color: rgb(53, 73, 94)
+}
+#pageBtn {
+  position: fixed;
+  bottom: 0;
+  background: #fbf9fe;
+  border-top: 1px #ddd solid;
+  width: 100vw;
+  z-index: 999;
+}
+.card-flex {
+  display: flex;
+}
+.card-flex > div {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+}
+.card-content {
+  padding: 10px 0;
+}
+.card-padding {
+  padding: 15px;
+}
+.card-name {
+  color: #438EB9;
+}
+
+/*
+	控制面板
+ */
+.dashboard-card {
+	padding: 0;
+}
+
+.vux-button-group > a {
+  height: 40px!important;
+  line-height: 40px!important;
+  /*border-radius: 0!important;*/
+}
+.category > a.vux-button-group-current,
+.category > a.hover,
+.category > a:active {
+  border-color: #2892D0!important;
+  background: #2892D0!important;
+}
